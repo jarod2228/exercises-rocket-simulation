@@ -8,9 +8,38 @@
     </style>
   </head>
   <body>
+      <form action="https://handlers.education.launchcode.org/request-parrot" method = "POST">
+        <label>Test Form <input type = "text" name = "testName"/></label>
+        <label>Test Date <input type = "date" id = "dateStuff" name = "testDate"/></label>
+        <label>Rocket Type <select name = "rocketType">
+            <option value = "">Select One</option>
+            <option value = "1">Brant</option>
+            <option value = "2">Lynx</option>
+            <option value = "3">Terrier</option>
+        </select></label>
+        <label>Number of Rocket Boosters<input type = "number" name = "boosterCount" min = 0 max = 10></label>
+        <p>Wind Rating:</p>
+        <label for = "no-wind">No Wind<input type = "radio" id = "no-wind" name = "windRating" value = 0></label>
+        <label for = "mild">Mild<input type = "radio" id = "mild" name = "windRating" value = 10></label>
+        <label for = "strong">Strong<input type = "radio" id = "stgrong" name = "windRating" value = 20></label>
+        <label>Use production grade servers<input type = "checkbox" name = "productionServers"></label>
+        <button>Run Simulation</button>
+    </form>
     <!-- TODO: add form here -->
-    
-
+    <script>
+    window.addEventListener("load", function() {
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            let testName = document.querySelector("input[name=testname]");
+            let testDate = document.querySelector("input[name=testDate]");
+            // document.getElementById("dateStuff").defaultValue = "0000-00-00";
+            if (testName === "" || testDate === ) {
+                event.preventDefault();
+            }
+            alert()
+        })
+    });
+    </script>
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
   </body>
